@@ -24,9 +24,26 @@ export default function App() {
       html2canvas = window.html2canvas
     }
 
+    // Wait for all images to load before capturing
+    const images = el.querySelectorAll('img')
+    await Promise.all(
+      Array.from(images).map(
+        img =>
+          new Promise((resolve) => {
+            if (img.complete) {
+              resolve()
+            } else {
+              img.onload = () => resolve()
+              img.onerror = () => resolve() // Resolve even on error to proceed
+            }
+          })
+      )
+    )
+
     const canvas = await html2canvas(el, {
       scale: 2,
       useCORS: true,
+      allowTaint: true,
       backgroundColor: null,
     })
 

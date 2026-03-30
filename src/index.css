@@ -225,12 +225,22 @@ body {
 /* ── Header logos ─────────────────────────────────────────── */
 .cert-header {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 0fr 1fr;
   align-items: center;
   gap: 16px;
   margin-bottom: 22px;
   border-bottom: 1.5px solid rgba(13,31,78,0.15);
   padding-bottom: 22px;
+}
+
+.right-align {
+  justify-content: flex-end;
+}
+
+.vertical-line {
+   width: 1.5px;          
+  height: 100%;       
+  background-color: var(--navy);
 }
 
 .org-block { display: flex; align-items: center; gap: 12px; }
@@ -254,6 +264,11 @@ body {
   color: var(--navy);
   line-height: 1.55;
   letter-spacing: 0.04em;
+}
+
+.right-text{
+  text-align: right;
+  letter-spacing: 0.03em;
 }
 
 /* ── Title ────────────────────────────────────────────────── */

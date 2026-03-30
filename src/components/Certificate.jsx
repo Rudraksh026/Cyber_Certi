@@ -1,6 +1,7 @@
 import { forwardRef } from "react";
 import gbpantLogo from "../assets/gbpant_logo.png";
 import alumniLogo from "../assets/alumni_logo.jpg";
+import anil_signature from "../assets/anil_sir_sign.webp";
 
 const CERT_NO = "001";
 
@@ -65,25 +66,27 @@ const Certificate = forwardRef(({ participantId,handleDownload }, ref) => {
             {/* Header */}
             <div className="cert-header">
               {/* Left — GB Pant */}
-              <div className="org-block">
+              <div className="org-block right-align">
+                <div className="org-text right-text">
+                  GOVIND BALLABH PANT
+                  <br />
+                  UNIVERSITY OF
+                  <br />
+                  AGRICULTURE AND
+                  <br />
+                  TECHNOLOGY
+                </div>
                 <img
                   src={gbpantLogo}
                   className="org-logo"
                   alt="GB Pant University Logo"
                 />
-                <div className="org-text">
-                  GB PANT UNIVERSITY
-                  <br />
-                  OF AGRICULTURE &amp;
-                  <br />
-                  TECHNOLOGY,
-                  <br />
-                  PANTNAGAR
-                </div>
               </div>
 
+              <div className="vertical-line"></div>
+
               {/* Right — 4A Alumni */}
-              <div className="org-block right">
+              <div className="org-block">
                 <img
                   src={alumniLogo}
                   className="org-logo"
@@ -138,7 +141,12 @@ const Certificate = forwardRef(({ participantId,handleDownload }, ref) => {
 
             {/* Signature */}
             <div className="cert-footer">
-              <div className="signature-img">Anil Kumar</div>
+              <div className="">
+                <img
+                  src={anil_signature}
+                  alt="Dr. Anil Kumar Signature"
+                />
+              </div>
               <div className="sig-divider" />
               <div className="sig-name">Dr. Anil Kumar</div>
               <div className="sig-role">
