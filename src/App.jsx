@@ -1,5 +1,6 @@
 import { useState, useRef, useCallback } from 'react'
 import Certificate from './components/Certificate'
+import { Analytics } from "@vercel/analytics/react"
 
 export default function App() {
   const [participantId, setParticipantId] = useState('')
@@ -98,7 +99,7 @@ export default function App() {
         handleDownload ={handleDownload}
       />
 
-      
+      <Analytics />
     </>
   )
 }
